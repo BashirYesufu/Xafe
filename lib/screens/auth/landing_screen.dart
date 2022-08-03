@@ -3,6 +3,7 @@ import 'package:xafe/components/buttons/xafe_button.dart';
 import 'package:xafe/components/main_navs/xafe_scaffold.dart';
 import 'package:xafe/constants/app_colors.dart';
 import '../../constants/app_textstyles.dart';
+import '../../routes.dart';
 
 class LandingScreen extends StatelessWidget {
   const LandingScreen({Key? key}) : super(key: key);
@@ -10,11 +11,12 @@ class LandingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return XafeScaffold(
+      hasBackButton: false,
       backgroundColor: AppColors.deepBlue,
       appBarColor: AppColors.deepBlue,
       children: [
         SizedBox(
-          height: MediaQuery.of(context).size.height / 4,
+          height: MediaQuery.of(context).size.height / 5,
         ),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 10.0),
@@ -28,7 +30,9 @@ class LandingScreen extends StatelessWidget {
           style: AppTextStyles.whiteBold(16),
         ),
         SizedBox(height: MediaQuery.of(context).size.height / 7,),
-        XafeButton(text: 'Login', onPressed: () {}),
+        XafeButton(text: 'Login', onPressed: () =>
+          Navigator.pushNamed(context, Routes.signIn),
+        ),
         Padding(
           padding: const EdgeInsets.only(top: 10.0, bottom: 80),
           child: Row(
@@ -39,6 +43,7 @@ class LandingScreen extends StatelessWidget {
                 style: AppTextStyles.white(14),
               ),
               InkWell(
+                onTap: ()=>Navigator.pushNamed(context, Routes.signUpName),
                 child: Text(
                   'Create an account',
                   style: AppTextStyles.whiteBold(14),
