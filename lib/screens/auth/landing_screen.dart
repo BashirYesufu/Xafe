@@ -27,27 +27,28 @@ class LandingScreen extends StatelessWidget {
           'Smart Budgeting',
           style: AppTextStyles.whiteBold(16),
         ),
+        SizedBox(height: MediaQuery.of(context).size.height / 7,),
+        XafeButton(text: 'Login', onPressed: () {}),
         Padding(
-          padding: const EdgeInsets.only(bottom: 20.0),
-          child: XafeButton(text: 'Login', onPressed: () {}),
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'New Here? ',
-              style: AppTextStyles.white(14),
-            ),
-            InkWell(
-              child: Text(
-                'Create an account',
-                style: AppTextStyles.whiteBold(14),
+          padding: const EdgeInsets.only(top: 10.0, bottom: 80),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'New Here? ',
+                style: AppTextStyles.white(14),
               ),
-            ),
-          ],
+              InkWell(
+                child: Text(
+                  'Create an account',
+                  style: AppTextStyles.whiteBold(14),
+                ),
+              ),
+            ],
+          ),
         ),
         Padding(
-          padding: const EdgeInsets.only(left: 50.0, right: 50.0, bottom: 20),
+          padding: const EdgeInsets.only(left: 50.0, right: 50.0),
           child: Text(
             'By continuing, you agree to Xafe’s terms of use and privacy policy',
             style: AppTextStyles.white(10),
