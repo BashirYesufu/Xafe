@@ -15,13 +15,13 @@ class SignInScreen extends StatelessWidget {
         children: [
           Row(
             children: [
-              Text('Welcome back', style: AppTextStyles.deepBlueBold(22),),
+              Text('Welcome back', style: AppTextStyles.deepBlue(size: 22),),
               Spacer(),
             ],
           ),
           Row(
             children: [
-              Text('Login to your account', style: AppTextStyles.grey(12),),
+              Text('Login to your account', style: AppTextStyles.grey(size: 12),),
               Spacer(),
             ],
           ),
@@ -36,7 +36,7 @@ class SignInScreen extends StatelessWidget {
             children: [
               Spacer(),
               XafeCard(
-                 child: Text('forgot password?', style: AppTextStyles.deepBlue(10),)
+                 child: Text('forgot password?', style: AppTextStyles.deepBlue(size: 10,fontWeight: FontWeight.normal),)
               ),
             ],
           ),
