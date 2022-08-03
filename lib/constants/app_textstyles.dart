@@ -21,4 +21,21 @@ class AppTextStyles {
       fontSize: 16,
       fontWeight: FontWeight.bold
   );
+  static TextStyle deepBlueBold(double number) => TextStyle(
+      fontFamily: AppFonts.euclid,
+      color: AppColors.deepBlue,
+      fontSize: number,
+      fontWeight: FontWeight.bold
+  );
+  static TextStyle deepBlue(double number) => TextStyle(
+      fontFamily: AppFonts.euclid,
+      color: AppColors.deepBlue,
+      fontSize: number,
+  );
+  static TextStyle grey(double number) => TextStyle(
+      fontFamily: AppFonts.euclid,
+      color: AppColors.grey,
+      fontSize: number,
+  );
+
 }
