@@ -11,7 +11,7 @@ class XafeScaffold extends StatelessWidget {
   final Color appBarColor;
   final Color backgroundColor;
   final Widget? bottomNavBar;
-  final String appBarTitle;
+  final String? appBarTitle;
   final List<Widget>? trailing;
   final Widget? leading;
   final bool hasBackButton;
@@ -22,7 +22,7 @@ class XafeScaffold extends StatelessWidget {
   final TextStyle titleTextStyle;
 
   const XafeScaffold({
-    required this.appBarTitle,
+    this.appBarTitle,
     required this.children,
     this.appBarColor = AppColors.white,
     this.backgroundColor = AppColors.white,
@@ -56,7 +56,7 @@ class XafeScaffold extends StatelessWidget {
               elevation: 0,
               centerTitle: true,
               title: Text(
-                appBarTitle,
+                appBarTitle ?? '',
                 style: titleTextStyle,
               ),
               leading: hasLeading

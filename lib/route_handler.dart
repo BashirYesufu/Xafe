@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:xafe/routes.dart';
-import 'package:xafe/screens/landing_screen.dart';
+import 'package:xafe/screens/auth/landing_screen.dart';
 
 class RouteHandler {
   static String initialRoute = Routes.landing;
