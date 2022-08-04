@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:xafe/components/main_navs/xafe_scaffold.dart';
 
 import '../../../components/buttons/xafe_button.dart';
+import '../../../components/cards/xafe_percent_indicator.dart';
 import '../../../components/textfields/borderless_textfield.dart';
 import '../../../constants/app_textstyles.dart';
 import '../../../routes.dart';
@@ -39,6 +40,7 @@ class SignUpEmail extends StatelessWidget {
           BorderlessTextField(
             hintText: 'Email',
           ),
+          XafePercentIndicator(percent: 0.5),
           XafeButton(text: 'Next', onPressed: (){
             Navigator.pushNamed(context, Routes.signUpCode);
           })

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:xafe/components/main_navs/xafe_scaffold.dart';
 
 import '../../../components/buttons/xafe_button.dart';
+import '../../../components/cards/xafe_percent_indicator.dart';
 import '../../../components/textfields/borderless_textfield.dart';
 import '../../../constants/app_textstyles.dart';
 import '../../../routes.dart';
@@ -39,6 +40,7 @@ class SignUpCode extends StatelessWidget {
           BorderlessTextField(
             hintText: 'Name',
           ),
+          XafePercentIndicator(percent: 0.75),
           XafeButton(text: 'Next', onPressed: (){
             Navigator.pushNamed(context, Routes.signUpPassword);
           })
