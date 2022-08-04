@@ -6,4 +6,5 @@ class Routes{
   static const signUpCode = 'signUpCode';
   static const signUpPassword = 'signUpPassword';
   static const signIn = 'signIn';
+  static const home = 'home';
 }
