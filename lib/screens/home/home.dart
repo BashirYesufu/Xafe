@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:xafe/models/view_models/payment_view_model.dart';
 import '../../components/cards/payment_card.dart';
 import '../../components/cards/xafe_card.dart';
 import '../../components/main_navs/xafe_scaffold.dart';
@@ -51,8 +52,47 @@ class HomeScreen extends StatelessWidget {
         SizedBox(
           height: 30,
         ),
-        Row(
-          children: [],
+        Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                XafeCard(
+                  height: 60,
+                  width: 50,
+                  borderRadius: BorderRadius.all(Radius.circular(8)),
+                  backgroundColor: AppColors.white,),
+                SizedBox(width: 20,),
+                XafeCard(
+                  height: 90,
+                  width: 50,
+                  borderRadius: BorderRadius.all(Radius.circular(8)),
+                  backgroundColor: AppColors.white,),
+              ],
+            ),
+            SizedBox(height: 10,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('Expenses', style: AppTextStyles.white(size: 12),),
+                    Text('\$4,750.00', style: AppTextStyles.white(size: 17, fontWeight: FontWeight.bold),)
+                  ],
+                ),
+                SizedBox(width: 20,),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('Income', style: AppTextStyles.white(size: 12),),
+                    Text('\$9,500.00', style: AppTextStyles.white(size: 17, fontWeight: FontWeight.bold),)
+                  ],
+                )
+              ],
+            ),
+          ],
         ),
         Spacer(),
         Container(
@@ -73,10 +113,10 @@ class HomeScreen extends StatelessWidget {
                   )
               ),
               SizedBox(height: 30,),
-              PaymentCard(),
-              PaymentCard(),
-              PaymentCard(),
-              PaymentCard(),
+              PaymentCard(model: PaymentViewModel(title: '📄 Bill payments', price: '\$500.00'),),
+              PaymentCard(model: PaymentViewModel(title: '💸 Transfers', price: '\$500.00'),),
+              PaymentCard(model: PaymentViewModel(title: '🍗 Food', price: '\$500.00'),),
+              PaymentCard(model: PaymentViewModel(title: '💳 Card Purchases', price: '\$500.00'),),
             ],
           ),
         )

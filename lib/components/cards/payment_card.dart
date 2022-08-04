@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:xafe/components/cards/xafe_card.dart';
+import 'package:xafe/models/view_models/payment_view_model.dart';
 
 import '../../constants/app_textstyles.dart';
 
 class PaymentCard extends StatelessWidget {
   const PaymentCard({
+    required this.model,
     Key? key,
   }) : super(key: key);
+
+  final PaymentViewModel model;
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +24,9 @@ class PaymentCard extends StatelessWidget {
           children: [
             Row(
               children: [
-                Text('📄Bill payments', style: AppTextStyles.deepBlue(size: 12),),
+                Text(model.title, style: AppTextStyles.deepBlue(size: 12),),
                 Spacer(),
-                Text('\$500.00', style: AppTextStyles.deepBlue(size: 12),)
+                Text(model.price, style: AppTextStyles.deepBlue(size: 12),)
               ],
             ),
             SizedBox(height: 20,),
