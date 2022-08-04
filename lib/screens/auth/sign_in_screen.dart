@@ -4,6 +4,7 @@ import 'package:xafe/components/cards/xafe_card.dart';
 import 'package:xafe/components/main_navs/xafe_scaffold.dart';
 import 'package:xafe/components/textfields/borderless_textfield.dart';
 import 'package:xafe/constants/app_textstyles.dart';
+import 'package:xafe/routes.dart';
 
 class SignInScreen extends StatelessWidget {
   const SignInScreen({Key? key}) : super(key: key);
@@ -41,7 +42,9 @@ class SignInScreen extends StatelessWidget {
             ],
           ),
           SizedBox(height: MediaQuery.of(context).size.height / 8,),
-          XafeButton(text: 'Login', onPressed: (){})
+          XafeButton(text: 'Login', onPressed: (){
+            Navigator.pushReplacementNamed(context, Routes.home);
+          })
         ],
     );
   }

@@ -40,7 +40,7 @@ class SignUpPassword extends StatelessWidget {
             hintText: 'Password',
           ),
           XafeButton(text: 'Next', onPressed: (){
-            Navigator.pushNamed(context, Routes.home);
+            Navigator.pushReplacementNamed(context, Routes.home);
           })
         ],
     );
