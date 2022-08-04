@@ -40,6 +40,7 @@ class SignUpEmail extends StatelessWidget {
           BorderlessTextField(
             hintText: 'Email',
           ),
+          SizedBox(height: MediaQuery.of(context).size.height / 8,),
           XafePercentIndicator(percent: 0.5),
           XafeButton(text: 'Next', onPressed: (){
             Navigator.pushNamed(context, Routes.signUpCode);

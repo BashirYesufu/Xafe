@@ -40,6 +40,7 @@ class SignUpPassword extends StatelessWidget {
           BorderlessTextField(
             hintText: 'Password',
           ),
+          SizedBox(height: MediaQuery.of(context).size.height / 8,),
           XafePercentIndicator(percent: 0.95),
           XafeButton(text: 'Next', onPressed: (){
             Navigator.pushReplacementNamed(context, Routes.home);
