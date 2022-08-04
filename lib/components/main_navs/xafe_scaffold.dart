@@ -22,10 +22,11 @@ class XafeScaffold extends StatelessWidget {
   final TextStyle? titleTextStyle;
   final Function? onBackPressed;
   final Widget? backButton;
+  final Widget? body;
 
   const XafeScaffold({
     this.appBarTitle,
-    required this.children,
+    this.children = const [],
     this.appBarColor = AppColors.white,
     this.backgroundColor = AppColors.white,
     this.titleTextStyle,
@@ -39,6 +40,7 @@ class XafeScaffold extends StatelessWidget {
     this.drawer,
     this.padding,
     this.backButton,
+    this.body,
     Key? key,
   }) : super(key: key);
 
@@ -72,7 +74,7 @@ class XafeScaffold extends StatelessWidget {
                   : SizedBox()),
               actions: trailing,
             ) : null,
-            body: SafeArea(
+            body: body ?? SafeArea(
               child: SingleChildScrollView(
                 child: Padding(
                   padding: padding ?? EdgeInsets.symmetric(horizontal: 20.0),

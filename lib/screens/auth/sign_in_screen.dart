@@ -43,7 +43,7 @@ class SignInScreen extends StatelessWidget {
           ),
           SizedBox(height: MediaQuery.of(context).size.height / 8,),
           XafeButton(text: 'Login', onPressed: (){
-            Navigator.pushReplacementNamed(context, Routes.home);
+            Navigator.pushReplacementNamed(context, Routes.tab);
           })
         ],
     );
