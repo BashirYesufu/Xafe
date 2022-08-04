@@ -106,7 +106,7 @@ class HomeScreen extends StatelessWidget {
             children: [
               SizedBox(
                 width: 70,
-                  height: 10,
+                  height: 5,
                   child: XafeCard(
                     backgroundColor: AppColors.grey.withOpacity(0.3),
                   )
