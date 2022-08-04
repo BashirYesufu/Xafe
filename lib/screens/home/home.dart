@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:xafe/models/view_models/payment_view_model.dart';
 import '../../components/cards/payment_card.dart';
 import '../../components/cards/xafe_card.dart';
-import '../../components/main_navs/xafe_scaffold.dart';
 import '../../constants/app_colors.dart';
 import '../../constants/app_textstyles.dart';
 

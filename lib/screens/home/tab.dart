@@ -3,6 +3,7 @@ import 'package:xafe/components/cards/xafe_card.dart';
 import 'package:xafe/components/main_navs/xafe_scaffold.dart';
 import 'package:xafe/constants/app_colors.dart';
 import 'package:xafe/constants/app_textstyles.dart';
+import 'package:xafe/screens/home/budget_screen.dart';
 import 'package:xafe/screens/home/home.dart';
 
 class TabScreen extends StatelessWidget {
@@ -18,7 +19,7 @@ class TabScreen extends StatelessWidget {
           children: [
            HomeScreen(),
             XafeScaffold(children: [Text('hell')]),
-            XafeScaffold(children: [Text('hell')]),
+            BudgetScreen(),
           ],
         ),
       ),
