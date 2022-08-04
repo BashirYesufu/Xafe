@@ -63,7 +63,7 @@ class XafeScaffold extends StatelessWidget {
                 appBarTitle ?? '',
                 style: titleTextStyle ?? AppTextStyles.deepBlue(size: 16),
               ),
-              leading: backButton ?? (hasBackButton
+              leading: leading ?? (hasBackButton
                   ? InkWell(
                  onTap: ()=>Navigator.pop(context),
 
