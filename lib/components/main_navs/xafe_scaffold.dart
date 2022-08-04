@@ -19,7 +19,7 @@ class XafeScaffold extends StatelessWidget {
   final Widget? drawer;
   final bool hasAppBar;
   final EdgeInsetsGeometry? padding;
-  final TextStyle titleTextStyle;
+  final TextStyle? titleTextStyle;
   final Function? onBackPressed;
   final Widget? backButton;
 
@@ -28,7 +28,7 @@ class XafeScaffold extends StatelessWidget {
     required this.children,
     this.appBarColor = AppColors.white,
     this.backgroundColor = AppColors.white,
-    this.titleTextStyle = AppTextStyles.deepBlueBold16,
+    this.titleTextStyle,
     this.bottomNavBar,
     this.onBackPressed,
     this.hasBackButton = true,
@@ -61,9 +61,9 @@ class XafeScaffold extends StatelessWidget {
               centerTitle: true,
               title: Text(
                 appBarTitle ?? '',
-                style: titleTextStyle,
+                style: titleTextStyle ?? AppTextStyles.deepBlue(size: 16),
               ),
-              leading: backButton ?? (hasBackButton
+              leading: leading ?? (hasBackButton
                   ? InkWell(
                  onTap: ()=>Navigator.pop(context),
 

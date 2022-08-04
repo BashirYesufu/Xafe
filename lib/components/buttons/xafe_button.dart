@@ -8,7 +8,7 @@ class XafeButton extends StatelessWidget {
   final String text;
   final Color backgroundColor;
   final Color borderColor;
-  final TextStyle textStyle;
+  final TextStyle? textStyle;
   final Widget? icon;
 
   const XafeButton({
@@ -17,7 +17,7 @@ class XafeButton extends StatelessWidget {
     this.backgroundColor = AppColors.blue,
     this.borderColor = AppColors.blue,
     this.icon,
-    this.textStyle = AppTextStyles.deepBlueBold16,
+    this.textStyle,
     Key? key,
   }) : super(key: key);
 
@@ -44,7 +44,7 @@ class XafeButton extends StatelessWidget {
               icon ?? SizedBox(),
               Text(
                 text,
-                style: textStyle,
+                style: textStyle ?? AppTextStyles.white(size: 16),
               ),
             ],
           ),

@@ -22,12 +22,12 @@ class LandingScreen extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 10.0),
           child: Text(
             'Xafe',
-            style: AppTextStyles.whiteBold(20),
+            style: AppTextStyles.white(size: 20),
           ),
         ),
         Text(
           'Smart Budgeting',
-          style: AppTextStyles.whiteBold(16),
+          style: AppTextStyles.white(size: 16),
         ),
         SizedBox(height: MediaQuery.of(context).size.height / 7,),
         XafeButton(text: 'Login', onPressed: () =>
@@ -40,13 +40,13 @@ class LandingScreen extends StatelessWidget {
             children: [
               Text(
                 'New Here? ',
-                style: AppTextStyles.white(14),
+                style: AppTextStyles.white(size: 14, fontWeight: FontWeight.normal),
               ),
               InkWell(
                 onTap: ()=>Navigator.pushNamed(context, Routes.signUpName),
                 child: Text(
                   'Create an account',
-                  style: AppTextStyles.whiteBold(14),
+                  style: AppTextStyles.white(size: 14),
                 ),
               ),
             ],
@@ -56,7 +56,7 @@ class LandingScreen extends StatelessWidget {
           padding: const EdgeInsets.only(left: 50.0, right: 50.0),
           child: Text(
             'By continuing, you agree to Xafe’s terms of use and privacy policy',
-            style: AppTextStyles.white(10),
+            style: AppTextStyles.white(size: 10, fontWeight: FontWeight.normal),
             textAlign: TextAlign.center,
           ),
         ),

@@ -4,21 +4,22 @@ import 'app_fonts.dart';
 
 class AppTextStyles {
 
-  static TextStyle whiteBold(double number) => TextStyle(
+  static TextStyle white({required double size, FontWeight? fontWeight} ) => TextStyle(
       fontFamily: AppFonts.euclid,
       color: AppColors.white,
-      fontSize:  number,
-      fontWeight: FontWeight.bold
+      fontSize:  size,
+      fontWeight: fontWeight ?? FontWeight.bold
   );
-  static TextStyle white(double number) => TextStyle(
-      fontFamily: AppFonts.euclid,
-      color: AppColors.white,
-      fontSize:  number,
-  );
-  static const deepBlueBold16 = TextStyle(
+  static TextStyle deepBlue({required double size, FontWeight? fontWeight}) => TextStyle(
       fontFamily: AppFonts.euclid,
       color: AppColors.deepBlue,
-      fontSize: 16,
+      fontSize: size,
       fontWeight: FontWeight.bold
   );
+  static TextStyle grey({required double size}) => TextStyle(
+      fontFamily: AppFonts.euclid,
+      color: AppColors.grey,
+      fontSize: size,
+  );
+
 }
