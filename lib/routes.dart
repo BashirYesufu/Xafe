@@ -8,4 +8,6 @@ class Routes{
   static const signIn = 'signIn';
   static const tab = 'home';
   static const createCategory = 'createCategory';
+  static const createExpense = 'createExpense';
+  static const createBudget = 'createBudget';
 }

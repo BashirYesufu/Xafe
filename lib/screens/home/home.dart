@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:xafe/constants/app_icons.dart';
 import 'package:xafe/models/view_models/payment_view_model.dart';
+import 'package:xafe/routes.dart';
+import '../../components/cards/bottom_sheet_item.dart';
 import '../../components/cards/payment_card.dart';
 import '../../components/cards/xafe_card.dart';
 import '../../constants/app_colors.dart';
@@ -37,12 +40,54 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               Spacer(),
-              XafeCard(
-                height: 40,
-                width: 40,
-                child: Icon(
-                  Icons.edit,
-                  color: AppColors.blue,
+              InkWell(
+                onTap: (){
+                  showModalBottomSheet(
+                      context: context,
+                      builder: (context){
+                    return Container(
+                        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                        decoration: BoxDecoration(
+                        color: AppColors.white,
+                        borderRadius: BorderRadius.only(topLeft: Radius.circular(30), topRight: Radius.circular(30))
+                        ),
+                        height: MediaQuery.of(context).size.height /3,
+                        child: Column(
+                          children: [
+                            SizedBox(
+                                width: 70,
+                                height: 5,
+                                child: XafeCard(
+                                  backgroundColor: AppColors.grey.withOpacity(0.3),
+                                )
+                            ),
+                            BottomSheetItem(
+                              iconAsset: AppIcons.coins,
+                              title: 'Add an Expense',
+                              onTap: ()=> Navigator.pushNamed(context, Routes.createExpense),
+                            ),
+                            BottomSheetItem(
+                              iconAsset: AppIcons.inOut,
+                              title: 'Create a budget',
+                              onTap: ()=> Navigator.pushNamed(context, Routes.createBudget),
+                            ),
+                            BottomSheetItem(
+                              iconAsset: AppIcons.hash,
+                              title: 'Add a spending category',
+                              onTap: ()=> Navigator.pushNamed(context, Routes.createCategory),
+                            ),
+                          ],
+                        )
+                    );
+                  });
+                },
+                child: XafeCard(
+                  height: 40,
+                  width: 40,
+                  child: Icon(
+                    Icons.edit,
+                    color: AppColors.blue,
+                  ),
                 ),
               )
             ],
