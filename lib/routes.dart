@@ -7,4 +7,5 @@ class Routes{
   static const signUpPassword = 'signUpPassword';
   static const signIn = 'signIn';
   static const tab = 'home';
+  static const createCategory = 'createCategory';
 }
