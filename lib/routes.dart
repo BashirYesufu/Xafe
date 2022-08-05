@@ -6,5 +6,8 @@ class Routes{
   static const signUpCode = 'signUpCode';
   static const signUpPassword = 'signUpPassword';
   static const signIn = 'signIn';
-  static const home = 'home';
+  static const tab = 'home';
+  static const createCategory = 'createCategory';
+  static const createExpense = 'createExpense';
+  static const createBudget = 'createBudget';
 }

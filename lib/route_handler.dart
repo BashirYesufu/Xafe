@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:xafe/routes.dart';
-import 'package:xafe/screens/auth/home.dart';
+import 'package:xafe/screens/budget_creation_screen.dart';
+import 'package:xafe/screens/category_creation_screen.dart';
+import 'package:xafe/screens/expense_creation_screen.dart';
+import 'package:xafe/screens/home/tab.dart';
 import 'package:xafe/screens/auth/landing_screen.dart';
 import 'package:xafe/screens/auth/sign_in_screen.dart';
 import 'package:xafe/screens/auth/sign_up/sign_up_code.dart';
@@ -18,7 +21,10 @@ class RouteHandler {
     Routes.signUpCode: (context) => SignUpCode(),
     Routes.signUpPassword: (context) => SignUpPassword(),
     Routes.signIn: (context) => SignInScreen(),
-    Routes.home: (context) => HomeScreen(),
+    Routes.tab: (context) => TabScreen(),
+    Routes.createCategory: (context) => CreateCategoryScreen(),
+    Routes.createExpense: (context) => CreateExpenseScreen(),
+    Routes.createBudget: (context) => CreateBudgetScreen()
   };
 
   static Route<dynamic>? generateRoute(RouteSettings route) {
