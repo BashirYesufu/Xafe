@@ -15,7 +15,9 @@ import 'package:xafe/screens/auth/sign_up/sign_up_password.dart';
 import 'models/arguments/budget_argument.dart';
 
 class RouteHandler {
-  static String initialRoute = Routes.landing;
+
+  static String loggedOutRoute = Routes.landing;
+  static String loggedInRoute = Routes.tab;
 
   static Map<String, Widget Function(BuildContext)> routes = {
     Routes.landing: (context) => LandingScreen(),

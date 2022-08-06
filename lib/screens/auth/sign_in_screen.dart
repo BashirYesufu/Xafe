@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:xafe/components/buttons/xafe_button.dart';
@@ -56,7 +55,7 @@ class SignInScreen extends StatelessWidget {
             final navigator = Navigator.of(context);
             loader.load();
             try {
-              UserCredential? user = await AuthService.login(email: emailTC.text, password: passwordTC.text);
+              await AuthService.login(email: emailTC.text, password: passwordTC.text);
               loader.stop();
               navigator.pushReplacementNamed(Routes.tab);
               AlertHandler.showPopup(context: context, alert: 'Welcome back!');
