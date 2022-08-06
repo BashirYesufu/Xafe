@@ -10,4 +10,5 @@ class Routes{
   static const createCategory = 'createCategory';
   static const createExpense = 'createExpense';
   static const createBudget = 'createBudget';
+  static const budget = 'budget';
 }
