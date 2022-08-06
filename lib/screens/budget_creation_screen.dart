@@ -1,7 +1,9 @@
+import 'package:dropdown_textfield/dropdown_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:xafe/components/main_navs/xafe_scaffold.dart';
 import '../components/buttons/xafe_button.dart';
 import '../components/textfields/borderless_textfield.dart';
+import '../components/textfields/dropdown_field.dart';
 import '../constants/app_colors.dart';
 import '../constants/app_textstyles.dart';
 
@@ -36,9 +38,14 @@ class CreateBudgetScreen extends StatelessWidget {
         BorderlessTextField(
           hintText: 'Budget amount',
         ),
-        BorderlessTextField(
+        DropDownField(
           hintText: 'Choose interval',
           suffixIcon: Icon(Icons.arrow_drop_down_sharp, color: AppColors.black,),
+          dropDownList: [
+            DropDownValueModel(name: 'Weekly', value: 'Weekly'),
+            DropDownValueModel(name: 'Monthly', value: 'Monthly'),
+            DropDownValueModel(name: 'Yearly', value: 'Yearly')
+          ],
         ),
       ],
     );

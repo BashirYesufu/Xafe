@@ -1,5 +1,3 @@
-
-
 import 'package:xafe/models/view_models/spending_category_view_model.dart';
 
 class TransactionViewModel extends SpendingCategoryViewModel {

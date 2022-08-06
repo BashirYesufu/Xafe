@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:xafe/components/main_navs/xafe_scaffold.dart';
-import 'package:xafe/utilities/services/auth_service.dart';
+import 'package:xafe/utilities/services/firebase_service.dart';
 import '../../../components/buttons/xafe_button.dart';
 import '../../../components/cards/xafe_percent_indicator.dart';
 import '../../../components/textfields/borderless_textfield.dart';
@@ -55,7 +55,7 @@ class SignUpPassword extends StatelessWidget {
             final navigator = Navigator.of(context);
             loader.load();
             try {
-              await AuthService.createUser(email: authProvider.email, password: passwordTC.text);
+              await FirebaseService.createUser(email: authProvider.email, password: passwordTC.text);
               loader.stop();
               navigator.pushReplacementNamed(Routes.tab);
               AlertHandler.showPopup(context: context, alert: 'Account Created Successfully!');

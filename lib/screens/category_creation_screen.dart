@@ -1,8 +1,10 @@
+import 'package:dropdown_textfield/dropdown_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:xafe/components/main_navs/xafe_scaffold.dart';
 import 'package:xafe/constants/app_colors.dart';
 import '../components/buttons/xafe_button.dart';
 import '../components/textfields/borderless_textfield.dart';
+import '../components/textfields/dropdown_field.dart';
 import '../constants/app_textstyles.dart';
 
 class CreateCategoryScreen extends StatelessWidget {
@@ -33,9 +35,15 @@ class CreateCategoryScreen extends StatelessWidget {
         BorderlessTextField(
           hintText: 'Enter category name',
         ),
-        BorderlessTextField(
+        DropDownField(
           hintText: 'Choose category emoji',
           suffixIcon: Icon(Icons.arrow_drop_down_sharp, color: AppColors.black,),
+          dropDownList: [
+            DropDownValueModel(name: '🍗', value: '🍗'),
+            DropDownValueModel(name: '✈️', value: '✈️'),
+            DropDownValueModel(name: '👗', value: '👗'),
+            DropDownValueModel(name: '⚽️', value: '⚽️'),
+          ],
         ),
       ],
     );
