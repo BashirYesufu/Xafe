@@ -14,7 +14,7 @@ class AppTextStyles {
       fontFamily: AppFonts.euclid,
       color: AppColors.deepBlue,
       fontSize: size,
-      fontWeight: FontWeight.bold
+      fontWeight: fontWeight ?? FontWeight.bold
   );
   static TextStyle grey({required double size}) => TextStyle(
       fontFamily: AppFonts.euclid,
@@ -22,4 +22,9 @@ class AppTextStyles {
       fontSize: size,
   );
 
+  static TextStyle red({required double size}) => TextStyle(
+    fontFamily: AppFonts.euclid,
+    color: AppColors.red,
+    fontSize: size,
+  );
 }
