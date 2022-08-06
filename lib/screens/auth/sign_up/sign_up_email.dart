@@ -61,7 +61,7 @@ class SignUpEmail extends StatelessWidget {
                 if (EmailValidator.validate(authProvider.email)) {
                   Navigator.pushNamed(context, Routes.signUpCode);
                   AlertHandler.showPopup(context: context,
-                      alert: 'Firebase currently does not support email verification for unregistered users in its free plan. '
+                      alert: 'Firebase currently does not support email verification for unregistered users. '
                           'Please enter any 4 digit number to proceed');
                 } else {
                   AlertHandler.showErrorPopup(context: context, error: 'Please enter a valid email');

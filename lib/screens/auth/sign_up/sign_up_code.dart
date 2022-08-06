@@ -55,7 +55,7 @@ class SignUpCode extends StatelessWidget {
               AlertHandler.showPopup(
                   context: context,
                   alert:
-                      'Firebase currently does not support email verification for unregistered users in its free plan. '
+                      'Firebase currently does not support email verification for unregistered users. '
                       'Please enter any 4 digit number to proceed');
             }
           },
