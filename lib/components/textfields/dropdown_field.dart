@@ -14,6 +14,8 @@ class DropDownField extends StatelessWidget {
     this.suffixIcon,
     this.hintTextColor = AppColors.grey,
     this.hintText = '',
+    this.onChanged,
+    this.controller,
     Key? key,
   }) : super(key: key);
   final List<DropDownValueModel> dropDownList;
@@ -23,10 +25,13 @@ class DropDownField extends StatelessWidget {
   final Widget? suffixIcon;
   final Color hintTextColor;
   final String hintText;
+  final Function(dynamic)? onChanged;
+  final SingleValueDropDownController? controller;
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.symmetric(vertical: 10.0),
       padding: EdgeInsets.all(3.0),
       decoration: BoxDecoration(
         color: AppColors.lightGrey,
@@ -55,6 +60,7 @@ class DropDownField extends StatelessWidget {
               fontSize: 14.0
           ),
         ),
+        onChanged: onChanged,
       ),
     );
   }

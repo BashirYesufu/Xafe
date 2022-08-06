@@ -1,9 +1,11 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:xafe/models/expense.dart';
 
 import '../../constants/preference_strings.dart';
 import '../helpers/shared_pref.dart';
 
-class AuthService {
+class FirebaseService {
   static Future<UserCredential?> login({required String email, required String password}) async {
     try {
       await FirebaseAuth.instance.signInWithEmailAndPassword(
@@ -26,4 +28,18 @@ class AuthService {
     return null;
   }
 
+  static Future createExpense(Expense expense) async {
+    final docUser = FirebaseFirestore.instance.collection('expenses').doc(expense.id);
+    print(expense.id);
+
+    final json = {
+      'amount': expense.amount,
+      'category': expense.category,
+      'date': expense.date,
+      'interval': expense.interval,
+      'name': expense.name
+    };
+
+    await docUser.set(json);
+  }
 }

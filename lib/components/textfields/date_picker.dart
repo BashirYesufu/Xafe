@@ -11,6 +11,8 @@ class DatePicker extends StatelessWidget {
     this.suffixIcon,
     this.hintTextColor = AppColors.grey,
     this.hintText = '',
+    this.controller,
+    this.onChanged,
     Key? key,
   }) : super(key: key);
   final Color? fillColor;
@@ -19,6 +21,8 @@ class DatePicker extends StatelessWidget {
   final Widget? suffixIcon;
   final Color hintTextColor;
   final String hintText;
+  final TextEditingController? controller;
+  final Function(String)? onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -56,6 +60,8 @@ class DatePicker extends StatelessWidget {
               fontSize: 14.0
           ),
         ),
+        controller: controller,
+        onChanged: onChanged,
       ),
     );
   }

@@ -7,7 +7,7 @@ import 'package:xafe/components/textfields/borderless_textfield.dart';
 import 'package:xafe/constants/app_textstyles.dart';
 import 'package:xafe/routes.dart';
 import 'package:xafe/utilities/helpers/alert_handler.dart';
-import 'package:xafe/utilities/services/auth_service.dart';
+import 'package:xafe/utilities/services/firebase_service.dart';
 import '../../utilities/providers/providers/loading_state_provider.dart';
 
 class SignInScreen extends StatelessWidget {
@@ -54,16 +54,19 @@ class SignInScreen extends StatelessWidget {
           SizedBox(height: MediaQuery.of(context).size.height / 8,),
           XafeButton(text: 'Login', onPressed: () async {
             final navigator = Navigator.of(context);
-            loader.load();
-            try {
-              await AuthService.login(email: emailTC.text, password: passwordTC.text);
-              loader.stop();
-              navigator.pushReplacementNamed(Routes.tab);
-              AlertHandler.showPopup(context: context, alert: 'Welcome back!');
-            } catch (e) {
-              loader.stop();
-              AlertHandler.showErrorPopup(context: context, error: e.toString());
-            }
+              loader.load();
+              try {
+                await FirebaseService.login(
+                    email: emailTC.text, password: passwordTC.text);
+                loader.stop();
+                navigator.pushReplacementNamed(Routes.tab);
+                AlertHandler.showPopup(
+                    context: context, alert: 'Welcome back!');
+              } catch (e) {
+                loader.stop();
+                AlertHandler.showErrorPopup(
+                    context: context, error: e.toString());
+              }
           })
         ],
     );
