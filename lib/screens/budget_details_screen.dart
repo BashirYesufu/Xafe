@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:xafe/components/cards/transaction_card.dart';
 import 'package:xafe/components/cards/xafe_percent_indicator.dart';
 import 'package:xafe/components/main_navs/xafe_scaffold.dart';
 import 'package:xafe/constants/app_colors.dart';
 import 'package:xafe/constants/app_textstyles.dart';
 import 'package:xafe/models/view_models/budget_view_model.dart';
+import 'package:xafe/models/view_models/transaction_view_model.dart';
 
 import '../components/cards/xafe_card.dart';
 
@@ -97,11 +99,15 @@ class BudgetDetailsScreen extends StatelessWidget {
                 Row(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(left: 20.0),
+                      padding: const EdgeInsets.only(left: 20.0, bottom: 20.0),
                       child: Text('Expense History', style: AppTextStyles.deepBlue(size: 15, fontWeight: FontWeight.bold),),
                     ),
                   ],
                 ),
+                TransactionCard(model: TransactionViewModel(emoji: '🍗', categoryName: 'Celery', price: 14.99)),
+                TransactionCard(model: TransactionViewModel(emoji: '🍗', categoryName: 'Tomatoes', price: 14.99)),
+                TransactionCard(model: TransactionViewModel(emoji: '🍗', categoryName: 'Milk & Sugar', price: 14.99)),
+                TransactionCard(model: TransactionViewModel(emoji: '✈️', categoryName: 'Uber fares', price: 14.99))
               ],
             ),
           )
