@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:xafe/components/cards/xafe_card.dart';
+import 'package:xafe/models/view_models/spending_category_view_model.dart';
 import 'package:xafe/routes.dart';
 import '../../components/cards/category_card.dart';
 import '../../constants/app_colors.dart';
@@ -65,11 +66,10 @@ class CategoryScreen extends StatelessWidget {
                     )
                 ),
                 SizedBox(height: 30,),
-                CategoryCard(),
-                CategoryCard(),
-                CategoryCard(),
-                CategoryCard()
-
+                CategoryCard(model: SpendingCategoryViewModel(emoji: '🍗', categoryName: 'Food'),),
+                CategoryCard(model: SpendingCategoryViewModel(emoji: '👗', categoryName: 'Fashion'),),
+                CategoryCard(model: SpendingCategoryViewModel(emoji: '✈️', categoryName: 'Transport'),),
+                CategoryCard(model: SpendingCategoryViewModel(emoji: '⚽️', categoryName: 'Sports'),)
               ],
             ),
           )
