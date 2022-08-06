@@ -7,6 +7,7 @@ import 'package:xafe/constants/app_textstyles.dart';
 import 'package:xafe/models/arguments/budget_argument.dart';
 import 'package:xafe/models/view_models/budget_view_model.dart';
 import 'package:xafe/models/view_models/transaction_view_model.dart';
+import 'package:xafe/utilities/helpers/alert_handler.dart';
 
 import '../components/cards/bottom_sheet_item.dart';
 import '../components/cards/xafe_card.dart';
@@ -65,7 +66,7 @@ class BudgetDetailsScreen extends StatelessWidget {
                         BottomSheetItem(
                           iconAsset: AppIcons.trash,
                           title: 'Delete budget',
-                          onTap: ()=> Navigator.pushNamed(context, Routes.createCategory),
+                          onTap: ()=> AlertHandler.showPopup(context: context, alert: 'Coming soon!'),
                         ),
                         SizedBox(height: 50,)
                       ],

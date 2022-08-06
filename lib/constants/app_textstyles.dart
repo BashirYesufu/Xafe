@@ -27,4 +27,10 @@ class AppTextStyles {
     color: AppColors.red,
     fontSize: size,
   );
+
+  static TextStyle orange({required double size}) => TextStyle(
+    fontFamily: AppFonts.euclid,
+    color: AppColors.orange,
+    fontSize: size,
+  );
 }

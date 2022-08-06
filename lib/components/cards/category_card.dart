@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:xafe/components/cards/xafe_card.dart';
+import 'package:xafe/constants/app_colors.dart';
 import '../../constants/app_textstyles.dart';
+import '../../models/view_models/spending_category_view_model.dart';
 
 class CategoryCard extends StatelessWidget {
   const CategoryCard({
+    required this.model,
     Key? key,
   }) : super(key: key);
+  final SpendingCategoryViewModel model;
 
   @override
   Widget build(BuildContext context) {
@@ -17,19 +21,19 @@ class CategoryCard extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Row(
               children: [
-                Text('✈️', style: AppTextStyles.white(size: 30, fontWeight: FontWeight.bold),),
+                Text(model.emoji, style: AppTextStyles.white(size: 30, fontWeight: FontWeight.bold),),
                 SizedBox(width: 20,),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Transport', style: AppTextStyles.deepBlue(size: 20),),
-                    Text('13/12/20', style: AppTextStyles.grey(size: 12),),
+                    Text(model.categoryName, style: AppTextStyles.deepBlue(size: 20),),
+                    Text(model.timeAdded, style: AppTextStyles.grey(size: 12),),
                   ],
                 ),
                 Spacer(),
                 XafeCard(
-                  backgroundColor: Colors.orange.withOpacity(0.2),
-                  child: Text('remove'),
+                  backgroundColor: AppColors.lightOrange,
+                  child: Text('remove', style: AppTextStyles.orange(size: 12),),
                 )
               ],
             ),

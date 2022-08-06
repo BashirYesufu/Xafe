@@ -6,6 +6,7 @@ import '../components/buttons/xafe_button.dart';
 import '../components/textfields/borderless_textfield.dart';
 import '../components/textfields/dropdown_field.dart';
 import '../constants/app_textstyles.dart';
+import '../utilities/helpers/alert_handler.dart';
 
 class CreateCategoryScreen extends StatelessWidget {
   const CreateCategoryScreen({Key? key}) : super(key: key);
@@ -18,8 +19,8 @@ class CreateCategoryScreen extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
           child: XafeButton(
               text: 'Create Category',
-              onPressed: (){
-          }),
+              onPressed: ()=>AlertHandler.showPopup(context: context, alert: 'Coming soon!'),
+          ),
         ),
       ),
       children: [

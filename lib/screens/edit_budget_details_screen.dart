@@ -5,6 +5,7 @@ import '../components/buttons/xafe_button.dart';
 import '../components/textfields/borderless_textfield.dart';
 import '../constants/app_colors.dart';
 import '../models/view_models/budget_view_model.dart';
+import '../utilities/helpers/alert_handler.dart';
 
 class EditBudgetDetailsScreen extends StatelessWidget {
   const EditBudgetDetailsScreen({
@@ -20,8 +21,7 @@ class EditBudgetDetailsScreen extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
           child: XafeButton(
               text: 'Create Category',
-              onPressed: (){
-              }),
+              onPressed: ()=>AlertHandler.showPopup(context: context, alert: 'Coming soon!'),),
         ),
       ),
       children: [
