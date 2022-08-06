@@ -41,6 +41,7 @@ class SignInScreen extends StatelessWidget {
           BorderlessTextField(
             hintText: 'password',
             controller: passwordTC,
+            obscured: true,
           ),
           Row(
             children: [
