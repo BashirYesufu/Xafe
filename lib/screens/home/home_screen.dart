@@ -44,40 +44,43 @@ class HomeScreen extends StatelessWidget {
                 onTap: (){
                   showModalBottomSheet(
                       context: context,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.only(topLeft: Radius.circular(30), topRight: Radius.circular(30)),
+                      ),
                       builder: (context){
-                    return Container(
-                        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                        decoration: BoxDecoration(
-                        color: AppColors.white,
-                        borderRadius: BorderRadius.only(topLeft: Radius.circular(30), topRight: Radius.circular(30))
-                        ),
-                        height: MediaQuery.of(context).size.height /3,
-                        child: Column(
-                          children: [
-                            SizedBox(
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 10.0),
+                            child: SizedBox(
                                 width: 70,
                                 height: 5,
                                 child: XafeCard(
                                   backgroundColor: AppColors.grey.withOpacity(0.3),
                                 )
                             ),
-                            BottomSheetItem(
-                              iconAsset: AppIcons.coins,
-                              title: 'Add an Expense',
-                              onTap: ()=> Navigator.pushNamed(context, Routes.createExpense),
-                            ),
-                            BottomSheetItem(
-                              iconAsset: AppIcons.inOut,
-                              title: 'Create a budget',
-                              onTap: ()=> Navigator.pushNamed(context, Routes.createBudget),
-                            ),
-                            BottomSheetItem(
-                              iconAsset: AppIcons.hash,
-                              title: 'Add a spending category',
-                              onTap: ()=> Navigator.pushNamed(context, Routes.createCategory),
-                            ),
-                          ],
-                        )
+                          ),
+                          BottomSheetItem(
+                            iconAsset: AppIcons.coins,
+                            title: 'Add an Expense',
+                            onTap: ()=> Navigator.pushNamed(context, Routes.createExpense),
+                          ),
+                          BottomSheetItem(
+                            iconAsset: AppIcons.inOut,
+                            title: 'Create a budget',
+                            onTap: ()=> Navigator.pushNamed(context, Routes.createBudget),
+                          ),
+                          BottomSheetItem(
+                            iconAsset: AppIcons.hash,
+                            title: 'Add a spending category',
+                            onTap: ()=> Navigator.pushNamed(context, Routes.createCategory),
+                          ),
+                          SizedBox(height: 50,)
+                        ],
+                      ),
                     );
                   });
                 },

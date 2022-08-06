@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:xafe/components/cards/xafe_card.dart';
 import 'package:xafe/routes.dart';
+import '../../components/cards/category_card.dart';
 import '../../constants/app_colors.dart';
 import '../../constants/app_textstyles.dart';
 
@@ -47,7 +48,7 @@ class CategoryScreen extends StatelessWidget {
           ),
           Spacer(),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            padding: EdgeInsets.symmetric(vertical: 10),
             decoration: BoxDecoration(
                 color: AppColors.white,
                 borderRadius: BorderRadius.only(topLeft: Radius.circular(30), topRight: Radius.circular(30))
@@ -64,30 +65,11 @@ class CategoryScreen extends StatelessWidget {
                     )
                 ),
                 SizedBox(height: 30,),
-                Column(
-                  children: [
-                    Row(
-                      children: [
-                        Text('✈️', style: AppTextStyles.white(size: 30, fontWeight: FontWeight.bold),),
-                        SizedBox(width: 20,),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text('Transport', style: AppTextStyles.deepBlue(size: 20),),
-                            Text('13/12/20', style: AppTextStyles.grey(size: 12),),
-                          ],
-                        ),
-                        Spacer(),
-                        XafeCard(
-                          backgroundColor: Colors.orange.withOpacity(0.2),
-                          child: Text('remove'),
-                        )
-                      ],
-                    ),
-                    SizedBox(height: 20,),
-                    XafeCard(height: 2,)
-                  ],
-                )
+                CategoryCard(),
+                CategoryCard(),
+                CategoryCard(),
+                CategoryCard()
+
               ],
             ),
           )

@@ -18,7 +18,7 @@ class SignUpEmail extends StatelessWidget {
           Row(
             children: [
               Text(
-                'What\s your email?',
+                'What\'s your email?',
                 style: AppTextStyles.deepBlue(size: 30),
               ),
               Spacer(),

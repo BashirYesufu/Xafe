@@ -17,7 +17,7 @@ class SignUpName extends StatelessWidget {
         Row(
           children: [
             Text(
-              'What\s your name?',
+              'What\'s your name?',
               style: AppTextStyles.deepBlue(size: 30),
             ),
             Spacer(),

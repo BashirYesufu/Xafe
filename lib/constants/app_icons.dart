@@ -4,4 +4,5 @@ class AppIcons {
   static const hash = 'assets/icons/hash.png';
   static const home = 'assets/icons/home.png';
   static const inOut = 'assets/icons/inout.png';
+  static const trash = 'assets/icons/trash.png';
 }

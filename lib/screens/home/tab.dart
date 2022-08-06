@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:xafe/constants/app_colors.dart';
 import 'package:xafe/screens/home/budget_screen.dart';
-import 'package:xafe/screens/home/categories.dart';
-import 'package:xafe/screens/home/home.dart';
+import 'package:xafe/screens/home/categories_screen.dart';
+import 'package:xafe/screens/home/home_screen.dart';
 
 class TabScreen extends StatelessWidget {
   const TabScreen({Key? key}) : super(key: key);
