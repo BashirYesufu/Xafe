@@ -59,7 +59,7 @@ class SignInScreen extends StatelessWidget {
               UserCredential? user = await AuthService.login(email: emailTC.text, password: passwordTC.text);
               loader.stop();
               navigator.pushReplacementNamed(Routes.tab);
-              AlertHandler.showPopup(context: context, alert: 'Welcome back ${user?.additionalUserInfo?.username}');
+              AlertHandler.showPopup(context: context, alert: 'Welcome back!');
             } catch (e) {
               loader.stop();
               AlertHandler.showErrorPopup(context: context, error: e.toString());
