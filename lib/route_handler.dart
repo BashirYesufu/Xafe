@@ -3,6 +3,7 @@ import 'package:xafe/routes.dart';
 import 'package:xafe/screens/budget_creation_screen.dart';
 import 'package:xafe/screens/budget_details_screen.dart';
 import 'package:xafe/screens/category_creation_screen.dart';
+import 'package:xafe/screens/edit_budget_details_screen.dart';
 import 'package:xafe/screens/expense_creation_screen.dart';
 import 'package:xafe/screens/home/tab.dart';
 import 'package:xafe/screens/auth/landing_screen.dart';
@@ -11,7 +12,6 @@ import 'package:xafe/screens/auth/sign_up/sign_up_code.dart';
 import 'package:xafe/screens/auth/sign_up/sign_up_email.dart';
 import 'package:xafe/screens/auth/sign_up/sign_up_name.dart';
 import 'package:xafe/screens/auth/sign_up/sign_up_password.dart';
-
 import 'models/arguments/budget_argument.dart';
 
 class RouteHandler {
@@ -36,6 +36,11 @@ class RouteHandler {
         final args = route.arguments as BudgetArguments;
         return MaterialPageRoute(builder: (context) {
           return BudgetDetailsScreen(model: args.model,);
+        });
+      case Routes.editBudget:
+        final args = route.arguments as BudgetArguments;
+        return MaterialPageRoute(builder: (context) {
+          return EditBudgetDetailsScreen(model: args.model,);
         });
       default:
         return null;

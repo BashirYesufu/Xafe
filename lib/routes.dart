@@ -11,4 +11,5 @@ class Routes{
   static const createExpense = 'createExpense';
   static const createBudget = 'createBudget';
   static const budget = 'budget';
+  static const editBudget = 'editBudget';
 }

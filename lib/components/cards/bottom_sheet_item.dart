@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:xafe/components/cards/xafe_card.dart';
-import '../../constants/app_icons.dart';
 import '../../constants/app_textstyles.dart';
 
 class BottomSheetItem extends StatelessWidget {
