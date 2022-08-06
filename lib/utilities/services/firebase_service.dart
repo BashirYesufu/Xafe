@@ -30,7 +30,6 @@ class FirebaseService {
 
   static Future createExpense(Expense expense) async {
     final docUser = FirebaseFirestore.instance.collection('expenses').doc(expense.id);
-    print(expense.id);
 
     final json = {
       'amount': expense.amount,

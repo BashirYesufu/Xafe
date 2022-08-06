@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:xafe/components/main_navs/xafe_scaffold.dart';
 import 'package:xafe/models/expense.dart';
+import 'package:xafe/routes.dart';
 import 'package:xafe/utilities/helpers/alert_handler.dart';
 import 'package:xafe/utilities/services/firebase_service.dart';
 import '../components/buttons/xafe_button.dart';
@@ -18,7 +19,6 @@ class CreateExpenseScreen extends StatelessWidget {
 
   final TextEditingController amountTC = TextEditingController();
   final TextEditingController nameTC = TextEditingController();
-  final TextEditingController dateTC = TextEditingController();
   final SingleValueDropDownController categoryTC = SingleValueDropDownController();
   final SingleValueDropDownController intervalTC = SingleValueDropDownController();
 
@@ -34,7 +34,7 @@ class CreateExpenseScreen extends StatelessWidget {
           child: XafeButton(
               text: 'Add Expense',
               onPressed: () async {
-                if (nameTC.text.isEmpty || amountTC.text.isEmpty ) {
+                if (nameTC.text.isEmpty || amountTC.text.isEmpty) {
                   AlertHandler.showErrorPopup(context: context, error: 'Please fill all required fields');
                 } else {
                   loader.load();
@@ -48,8 +48,11 @@ class CreateExpenseScreen extends StatelessWidget {
                     FirebaseService.createExpense(expense);
                     loader.stop();
                     AlertHandler.showPopup(
+                      hasCloseButton: false,
                         context: context,
-                        alert: 'Expense created with id: ${expense.id}');
+                        alert: 'Expense created with id: ${expense.id}',
+                      onPressed: ()=> Navigator.pushNamed(context, Routes.tab)
+                    );
                   } catch (e) {
                     loader.stop();
                     AlertHandler.showErrorPopup(
@@ -75,6 +78,7 @@ class CreateExpenseScreen extends StatelessWidget {
         BorderlessTextField(
           hintText: 'Expense amount',
           controller: amountTC,
+          inputType: TextInputType.number,
         ),
         DropDownField(
           hintText: 'Choose interval',
@@ -97,8 +101,9 @@ class CreateExpenseScreen extends StatelessWidget {
           ),
           dropDownList: [
             DropDownValueModel(name: 'Food', value: 'Food'),
-            DropDownValueModel(name: 'Travel', value: 'Travel'),
-            DropDownValueModel(name: 'Yearly', value: 'Yearly')
+            DropDownValueModel(name: 'Fashion', value: 'Fashion'),
+            DropDownValueModel(name: 'Transport', value: 'Transport'),
+            DropDownValueModel(name: 'Sport', value: 'Sport')
           ],
           controller: categoryTC,
         ),

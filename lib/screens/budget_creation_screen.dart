@@ -6,6 +6,7 @@ import '../components/textfields/borderless_textfield.dart';
 import '../components/textfields/dropdown_field.dart';
 import '../constants/app_colors.dart';
 import '../constants/app_textstyles.dart';
+import '../utilities/helpers/alert_handler.dart';
 
 class CreateBudgetScreen extends StatelessWidget {
   const CreateBudgetScreen({Key? key}) : super(key: key);
@@ -18,8 +19,8 @@ class CreateBudgetScreen extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
           child: XafeButton(
               text: 'Create Budget',
-              onPressed: (){
-              }),
+              onPressed: ()=>AlertHandler.showPopup(context: context, alert: 'Coming soon!'),
+          ),
         ),
       ),
       children: [
