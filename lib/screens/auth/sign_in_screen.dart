@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:xafe/components/buttons/xafe_button.dart';
@@ -7,7 +8,6 @@ import 'package:xafe/components/textfields/borderless_textfield.dart';
 import 'package:xafe/constants/app_textstyles.dart';
 import 'package:xafe/routes.dart';
 import 'package:xafe/utilities/helpers/alert_handler.dart';
-import 'package:xafe/utilities/helpers/helper.dart';
 import 'package:xafe/utilities/services/auth_service.dart';
 import '../../utilities/providers/providers/loading_state_provider.dart';
 
@@ -53,11 +53,13 @@ class SignInScreen extends StatelessWidget {
           ),
           SizedBox(height: MediaQuery.of(context).size.height / 8,),
           XafeButton(text: 'Login', onPressed: () async {
+            final navigator = Navigator.of(context);
             loader.load();
             try {
-              await AuthService.login(email: emailTC.text, password: passwordTC.text);
+              UserCredential? user = await AuthService.login(email: emailTC.text, password: passwordTC.text);
               loader.stop();
-              Navigator.pushReplacementNamed(context, Routes.tab);
+              navigator.pushReplacementNamed(Routes.tab);
+              AlertHandler.showPopup(context: context, alert: 'Welcome back ${user?.additionalUserInfo?.username}');
             } catch (e) {
               loader.stop();
               AlertHandler.showErrorPopup(context: context, error: e.toString());
