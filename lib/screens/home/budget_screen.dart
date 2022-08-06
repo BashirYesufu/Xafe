@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:xafe/components/cards/xafe_card.dart';
 import 'package:xafe/components/main_navs/xafe_scaffold.dart';
 import 'package:xafe/constants/app_textstyles.dart';
 import 'package:xafe/models/view_models/budget_view_model.dart';
@@ -16,10 +17,15 @@ class BudgetScreen extends StatelessWidget {
       children: [
         Row(
           children: [
-            Text('💻 Budgets', style: AppTextStyles.white(size: 20, fontWeight: FontWeight.bold),),
+            Text(
+              '💻 Budgets',
+              style: AppTextStyles.white(size: 20, fontWeight: FontWeight.bold),
+            ),
           ],
         ),
-        SizedBox(height: 20,),
+        SizedBox(
+          height: 20,
+        ),
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -28,18 +34,29 @@ class BudgetScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  BudgetCard(model: BudgetViewModel(
-                      title: 'Groceries',
-                    totalBudget: 50,
-                    spentBudget: 40,
-                    period: 'Monthly'
-                  ),),
-                  BudgetCard(model: BudgetViewModel(
-                      title: 'Kids',
-                      totalBudget: 210,
-                      spentBudget: 35,
-                      period: 'Monthly'
-                  ),),
+                  BudgetCard(
+                    model: BudgetViewModel(
+                        title: 'Groceries',
+                        totalBudget: 50,
+                        spentBudget: 40,
+                        period: 'Monthly'),
+                  ),
+                  BudgetCard(
+                    model: BudgetViewModel(
+                        title: 'Kids',
+                        totalBudget: 210,
+                        spentBudget: 35,
+                        period: 'Monthly'),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: XafeCard(
+                      backgroundColor: AppColors.lightBlue.withOpacity(0.5),
+                      height: 110,
+                      width: double.infinity,
+                      child: Icon(Icons.add, color: AppColors.white,),
+                    ),
+                  )
                 ],
               ),
             ),
@@ -48,24 +65,26 @@ class BudgetScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  BudgetCard(model: BudgetViewModel(
+                  BudgetCard(
+                    model: BudgetViewModel(
                       title: 'Family',
                       totalBudget: 1500,
                       spentBudget: 1000,
                       period: 'Monthly',
-                  ),),
-                  BudgetCard(model: BudgetViewModel(
-                      title: 'Clothing',
-                      totalBudget: 700,
-                      spentBudget: 235,
-                      period: 'Monthly'
-                  ),),
+                    ),
+                  ),
+                  BudgetCard(
+                    model: BudgetViewModel(
+                        title: 'Clothing',
+                        totalBudget: 700,
+                        spentBudget: 235,
+                        period: 'Monthly'),
+                  ),
                 ],
               ),
             ),
           ],
         ),
-
       ],
     );
   }

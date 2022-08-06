@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:xafe/constants/app_colors.dart';
+import 'package:xafe/constants/app_icons.dart';
 import 'package:xafe/screens/home/budget_screen.dart';
 import 'package:xafe/screens/home/categories_screen.dart';
 import 'package:xafe/screens/home/home_screen.dart';
@@ -36,7 +37,7 @@ class TabScreen extends StatelessWidget {
         tabs: [
           Tab(
             text: "Home",
-            icon: Icon(Icons.home),
+            icon: Image.asset(AppIcons.home),
           ),
           Tab(
             text: "Categories",
@@ -44,7 +45,7 @@ class TabScreen extends StatelessWidget {
           ),
           Tab(
             text: "Budget",
-            icon: Icon(Icons.account_balance_wallet),
+            icon: Image.asset(AppIcons.budget),
           ),
         ],
       ),
