@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:xafe/models/category_model.dart';
 import 'package:xafe/models/expense.dart';
-
 import '../../constants/preference_strings.dart';
 import '../helpers/shared_pref.dart';
 
@@ -41,4 +41,26 @@ class FirebaseService {
 
     await docUser.set(json);
   }
+
+  static Future createCategory(CategoryModel category) async {
+    final docUser = FirebaseFirestore.instance.collection('expenses').doc(category.id);
+
+    final json = {
+      'name': category.name,
+      'emoji': category.emoji,
+      'time': category.time,
+    };
+
+    await docUser.set(json);
+  }
+
+  // static Future<List<CategoryModel>> getCategories() async {
+  //   QuerySnapshot querySnapshot = await FirebaseFirestore.instance.collection('categories').get();
+  //   List<CategoryModel> models = [];
+  //   final List<QueryDocumentSnapshot<Object?>> allData = querySnapshot.docs;
+  //   allData.forEach((data) {
+  //     print(data);
+  //   });
+  //   return models;
+  // }
 }
