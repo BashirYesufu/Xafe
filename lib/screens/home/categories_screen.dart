@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:xafe/components/cards/xafe_card.dart';
+import 'package:xafe/models/category_model.dart';
 import 'package:xafe/models/view_models/spending_category_view_model.dart';
 import 'package:xafe/routes.dart';
 import '../../components/cards/category_card.dart';
 import '../../constants/app_colors.dart';
 import '../../constants/app_textstyles.dart';
+import '../../utilities/helpers/helper.dart';
+import '../../utilities/services/firebase_service.dart';
 
 class CategoryScreen extends StatelessWidget {
   const CategoryScreen({Key? key}) : super(key: key);
@@ -66,6 +69,36 @@ class CategoryScreen extends StatelessWidget {
                     )
                 ),
                 SizedBox(height: 30,),
+                // FutureBuilder<List<CategoryModel>>(
+                //   future: FirebaseService.getCategories(),
+                //   builder: (context, snapshot) {
+                //     if (snapshot.hasData) {
+                //
+                //       return Column(
+                //         children: [
+                //           ListView.builder(
+                //             scrollDirection: Axis.vertical,
+                //             shrinkWrap: true,
+                //             itemCount: snapshot.data?.length,
+                //             itemBuilder: (context, index) {
+                //               var category = snapshot.data![index];
+                //               return CategoryCard(model: SpendingCategoryViewModel(emoji: category.emoji, categoryName: category.name),);
+                //             },
+                //           ),
+                //         ],
+                //       );
+                //     } else if (snapshot.hasError) {
+                //       return Center(
+                //         child: Text(
+                //           snapshot.error.toString(),
+                //           style: AppTextStyles.red(size: 16),
+                //           textAlign: TextAlign.center,
+                //         ),
+                //       );
+                //     }
+                //     return Helper.showLoader();
+                //   },
+                // ),
                 CategoryCard(model: SpendingCategoryViewModel(emoji: '🍗', categoryName: 'Food'),),
                 CategoryCard(model: SpendingCategoryViewModel(emoji: '👗', categoryName: 'Fashion'),),
                 CategoryCard(model: SpendingCategoryViewModel(emoji: '✈️', categoryName: 'Transport'),),
