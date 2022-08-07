@@ -41,13 +41,13 @@ Run your simulator for iOS or android emulator and smash the build button. Easy 
 <table>
  <tr>
   <td>
-   <img align="left" alt="IMG" src="https://raw.githubusercontent.com/BashirYesufu/Xafe/main/documentation/1.jpg" width="400" height="600" />
+   <img align="left" alt="IMG" src="https://github.com/BashirYesufu/Xafe/blob/development/documentation/1.png" width="400" height="600" />
   </td>
   <td>
-    <img align="center" alt="IMG" src="https://raw.githubusercontent.com/BashirYesufu/Xafe/main/documentation/2.jpg" width="400" height="600" />
+    <img align="center" alt="IMG" src="https://github.com/BashirYesufu/Xafe/blob/development/documentation/2.png" width="400" height="600" />
   </td>
    <td>
-    <img align="right" alt="IMG" src="https://raw.githubusercontent.com/BashirYesufu/Xafe/main/documentation/3.jpg" width="400" height="600" />
+    <img align="right" alt="IMG" src="https://github.com/BashirYesufu/Xafe/blob/development/documentation/3.png" width="400" height="600" />
   </td>
  </tr>
 </table>
