@@ -54,6 +54,15 @@ class FirebaseService {
     await docUser.set(json);
   }
 
+  static Future signOut() async {
+    try {
+      await FirebaseAuth.instance.signOut();
+      Shared.setBoolean(Preference.isLoggedIn, false);
+    } on FirebaseAuthException catch (_){
+      rethrow;
+    }
+  }
+
   // static Future<List<CategoryModel>> getCategories() async {
   //   QuerySnapshot querySnapshot = await FirebaseFirestore.instance.collection('categories').get();
   //   List<CategoryModel> models = [];
