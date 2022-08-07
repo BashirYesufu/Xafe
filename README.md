@@ -34,3 +34,5 @@ flutter pub get
 
 Run your simulator for iOS or android emulator and smash the build button. Easy right? Leggo!
 
+## NOTES
+1. When you create an account, your log in status is persisted. So if you need to use the login functionality, i have added a signout button to the "This week" button on the home screen
