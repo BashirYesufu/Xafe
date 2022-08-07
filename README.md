@@ -36,3 +36,18 @@ Run your simulator for iOS or android emulator and smash the build button. Easy 
 
 ## NOTES
 1. When you create an account, your log in status is persisted. So if you need to use the login functionality, i have added a signout button to the "This week" button on the home screen
+
+## Screenshots of the app
+<table>
+ <tr>
+  <td>
+   <img align="left" alt="IMG" src="https://raw.githubusercontent.com/BashirYesufu/Xafe/main/Documentation/1.jpg" width="400" height="600" />
+  </td>
+  <td>
+    <img align="center" alt="IMG" src="https://raw.githubusercontent.com/BashirYesufu/Xafe/main/Documentation/2.jpg" width="400" height="600" />
+  </td>
+   <td>
+    <img align="right" alt="IMG" src="https://raw.githubusercontent.com/BashirYesufu/Xafe/main/Documentation/3.jpg" width="400" height="600" />
+  </td>
+ </tr>
+</table>
